@@ -25,6 +25,7 @@ StartBtn.addEventListener("click", () => {
         timer.textContent = ` Time left : ${timeSeconds}`;
       } else if (timeSeconds === 0) {
         clearInterval(timeInterval);
+        alert("Time's Up!");
         ParaWords = para.textContent.trim().split(" ");
         const InputWords = InputBox.value.split(" ");
         timer.textContent = `Time left: ${timeSeconds}`;
