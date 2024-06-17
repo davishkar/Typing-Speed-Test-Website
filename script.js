@@ -7,7 +7,7 @@ const accuracy = document.getElementById("accuracy");
 const RetryBtn = document.getElementById("retry-btn");
 const PauseBtn = document.getElementById("pause-btn");
 
-let timeSeconds = 15;
+let timeSeconds = 30;
 let accuracy1 = 0;
 let speed1 = 0;
 timer.textContent = `Time left: ${timeSeconds}`;
