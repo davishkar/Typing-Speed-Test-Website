@@ -1,124 +1,157 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+@keyframes bgMove {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
 }
 
-html,
 body {
-  height: 100%;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  background-image: url('https://res.cloudinary.com/dtrmjjphv/image/upload/v1703698127/bbblurry_1_uwz6tb.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: bgMove 15s infinite linear;
+}
+
+main {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.quote-display {
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.typing {
+  position: relative;
+}
+.correct {
+  color: #27ae60; /* Green color */
+}
+
+.wrong {
+  color: #e74c3c; /* Red color */
+  text-decoration: line-through;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #dddddd;
+  margin: 20px 0;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.timer,
+.words-per-minute {
+  text-align: center;
+}
+
+.quote-input {
   width: 100%;
-  background-color: #2c3a47;
+  padding: 1px;
+  font-size: 1.2em;
+  border: 2px solid #dddddd;
+  border-radius: 6px;
+  min-height: 150px;
+  color: #030303;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.feedback {
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e74c3c; /* Alizarin color */
+}
+
+.progress-bar-container {
+  height: 20px;
+  background-color: #ecf0f1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background-color: #3498db; /* Belize Hole color */
+  transition: width 2s ease; /* Animation duration and easing function */
+}
+.button-group {
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.container {
-  text-align: center;
-  background-color: white;
-  border-radius: 15px;
-  width: 600px;
-  height: 550px;
-  line-height: 30px;
-  padding: 35px;
-}
-
-input {
-  margin-top: 18px;
-  padding: 7px;
-  border: 1px solid #20749b;
-  border-radius: 8px;
-  height: 27px;
-}
-
-button {
-  border: 1px solid #20749b;
-  border-radius: 8px;
-  padding: 5px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-button:active {
-  color: #20749b;
-}
-
-h1 {
-  color: #20749b;
-}
-
-h2 {
-  color: #20749b;
-  margin-top: 10px;
-  margin-bottom: 8px;
-}
-
-#para{
+  gap: 15px;
   margin-top: 20px;
 }
 
-@media screen and (max-width:425px){
-  .container{
-    width: 380px;
-    padding: 10px;
+button {
+  border: none;
+  background-color: #20749b;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #185a82;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 480px) {
+  .button-group {
+      flex-direction: column;
+      gap: 10px;
   }
-  h1{
-    font-size: 1.50rem;
-    margin-top: 10px;
-  }
-  #para{
-    font-size: 1rem;
-    margin-top: 10px;
-  }
-  h2{
-    margin-top: 5px;
-  }
-  button{
-    margin-top: 0;
-  }
-  input{
-    margin-top: 9px;
+
+  button {
+      width: 100%;
   }
 }
 
-@media screen and (max-width:375px){
-  .container{
-    width: 340px;
-  }
-  #para{
-    font-size: 0.90rem;
-    margin-top: 10px;
+
+/* Animation for the progress bar */
+@keyframes fillProgressBar {
+  to {
+    width: 100%;
   }
 }
 
-@media screen and (max-width:320px){
-  .container{
-    width: 280px;
-    padding: 15px;
-  }
-  #para{
-    font-size: 0.90rem;
-    margin-top: 3px;
-  }
-  h1{
-    font-size: 1.20rem;
-    margin-top: 0px;
-  }
-  #para{
-    font-size: 0.80rem;
-  }
-  input{
-    margin-top: 0;
-  }
-  h2{
-    font-size: 1.20rem;
-  }
-  .container{
-    line-height: 26px;
-  }
-  button{
-    margin-top: 5px;
-  }
+.progress-bar.animated {
+  animation: fillProgressBar 2s ease;
 }

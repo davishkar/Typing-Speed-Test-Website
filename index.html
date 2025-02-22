@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing speed test</title>
+    <title>Typing Speed Test</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="container">
-        <h1>Typing Speed Test</h1>
-
-        <p id="para">
-            Twinkle, twinkle, little star,
-            How I wonder what you are!
-            Up above the world so high,
-            Like a diamond in the sky.
-
-            Twinkle, twinkle, little star,
-            How I wonder what you are!
-
-            When the blazing sun is gone,
-            When he nothing shines upon,
-            When you shower your little light,
-            Twinkle, twinkle, all the night.
-
-            Twinkle, twinkle, little star,
-            How I wonder what you are!
-        </p>
-        <span><input id="input" type="text"> <button id="start-btn">Start Test</button>
-            <button id="pause-btn">Pause</button>
-        </span>
-
-        <div>
-            <p id="timer">Time</p>
+    <h1 class="quote-display">Typing Speed Test</h1>
+    <main>
+       
+        
+        <div class="typing">
+            <p id="quote-text">"The only limit to our realization of tomorrow is our doubts of today." – Franklin D. Roosevelt</p>
         </div>
 
-        <h2>Test Result</h2>
+        <hr>
 
-        <p id="speed">Typing Speed : 0 WPM</p>
-        <p id="accuracy">Accuracy : 0 %</p>
+        <div class="score">
+            <div class="timer">
+                <p>Time Left: <span id="timer">30</span> s</p>
+            </div>
+            <div class="words-per-minute">
+                <p>WPM: <span id="wpm">0</span></p>
+            </div>
+        </div>
 
-        <button id="retry-btn">Retry Test</button>
-    </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+
+        <textarea id="quote-input" class="quote-input" placeholder="Start typing here..." aria-label="Typing area"></textarea>
+
+        <p id="feedback" class="feedback"></p>
+
+        <div class="button-group">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn" disabled>Pause</button>
+            <button id="retry-btn">Retry</button>
+        </div>
+    </main>
+
     <script src="script.js"></script>
-</body>
 
+</body>
 </html>
